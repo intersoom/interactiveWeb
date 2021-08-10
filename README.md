@@ -166,7 +166,7 @@ body {
         }
 ```
 
-→ .card에서 rotateY(0deg)를 안 해도 괜찮지만 해주는게 좋다고 함, transform rotate로 움직일 준비를 해줌
+→ .card에서 ```rotateY(0deg)```를 안 해도 괜찮지만 해주는게 좋다고 함, transform rotate로 움직일 준비를 해줌
 
 ```css
 <body>
@@ -211,7 +211,7 @@ body {
 
     → 주황색 부분을 활용해서 앞뒷면을 포갬
 
-- B가 위로 옴 → z-index: 1 써서 F가 위로 오게 해줌
+- B가 위로 옴 → ```z-index: 1``` 써서 F가 위로 오게 해줌
 - 문제점: 앞 뒷면을 포개도 양 쪽이 같은 면을 보고 있기 때문에 카드를 뒤집어도 B가 보이는게 아니라 아무 것도 안 보임
 
     → 해결책: 뒷면을 rotateY를 활용해서 뒤집어줌
@@ -227,7 +227,7 @@ body {
 
 - 문제점: world 안에 card가 있고 그 안에 card-side가 있기 때문에 3D 속성(perspective)을 world에 줬기 때문에 card-side에 그 효과가 안 미침
 
-    → 해결책: card에 transform-style: preserve-3d;를 주면 됨
+    → 해결책: card에 ```transform-style: preserve-3d;```를 주면 됨
 
     ```css
     transform-style: preserve-3d;
