@@ -360,3 +360,53 @@ body {
 - flex-shrink
 
 이외에도 다양한 기능이 있지만 핵심 개념은 이 정도!
+
+# 4. JS 시작하기
+
+### 1) 변수 선언하기
+
+- var 대신 const랑 let 사용
+- const: 값이 변하지 않는 것 (값을 변화시키려고 하면 에러남)
+- let: 값이 변하는 것
+- var & const/let을 섞어쓰면 안됨
+- 변수의 scope(유효범위):
+    1. var은 함수 단위로 함 → 함수 내에서 선언한 변수는 함수 밖에서는 사용할 수 없음
+    2. const/let은 {}을 단위로 함 → 함수 / if / for 등 안에서 선언한 변수는 밖에서 사용할 수 없음
+
+### 2) DOM Script
+
+- Document Object Model
+- 기본으로 const를 사용하고 나중에 값이 변할 것만 let을 사용하면 됨
+- querySelector: 공통된 클래스를 갖고 있는 값이 여러개 있어도 첫번째 것만 가져옴
+- querySelectorAll: 공통된 클래스를 갖고 있는 값을 모두 가져옴 (배열과 비슷한 형태로 가져옴)
+
+    → all 중에 하나 가져오는 방법
+
+    ```jsx
+    ilbuniGroup = document.querySelectorAll('.ilbuni')
+    console.log(ilbuniGroup[2])
+    ```
+
+    → nth-child도 사용 가능!
+
+- HTML element에 속성 값을 넣는 방법: setAttribute('data-XXX', XXX) 활용
+- data-로 시작하는 표준 커스텀 속성, data-의 형식으로 시작하면 어떤 속성이든 필요에 따라서 임의로 추가 가능
+
+    ```jsx
+    const char = document.querySelector('.characters')
+    char.setAttribute('data-id', 123)
+    ```
+
+- HTML element에 속성 값을 가져오는 방법: getAttribute('data-XXX') 활용
+
+    ```jsx
+    char.getAttribute('data-id')
+    ```
+
+- XXX.innerHTML: XXX 태그 사이에 HTML 태그나 글을 추가할 수 있음
+- appendChild(XXX): XXX라는 자식을 추가하는 속성
+- removeChild(XXX): XXX라는 자식을 삭제하는 속성
+- XXX.classList.add('YYY'): XXX에 YYY라는 클래스를 추가하는 속성 (이게 훨씬 좋기 때문에 이거 사용)
+- XXX.className = 'YYY': XXX의 클래스를 YYY 하나로 바꿔버림 (기존에 있던 클래스가 날라감)
+- XXX.classList.remove('YYY'): XXX에 YYY라는 클래스를 삭제하는 속성
+- XXX.classList.toggle('YYY'): XXX에 YYY라는 클래스를 추가/삭제하는 속성 (토글: on&off 개념)
